@@ -21,12 +21,32 @@ app.get("/icon", (req, res) => {
 app.get("/luck", (req, res) => {
   const num = Math.floor( Math.random() * 6 + 1 );
   let luck = '';
-  if( num==1 ) luck = '大吉';
-  else if( num==2 ) luck = '中吉';
-  console.log( 'あなたの運勢は' + luck + 'です' );
+  if(num == 1)luck = "大吉"
+  else if(num == 2)luck = "吉"
+  else if(num == 3)luck = "中吉"
+  else if(num == 4)luck = "小吉"
+  else if(num == 5)luck = "末吉"
+  else if(num == 6)luck = "凶"
+
   res.render( 'luck', {number:num, luck:luck} );
 });
+app.get("/luck2", (req, res) => {
+  const num = Math.floor( Math.random() * 3 + 1 );
+  let luck = '';
+  if(num == 1)luck = "グー"
+  else if(num == 2)luck = "チョキ"
+  else if(num == 3)luck = "パー"
 
+  res.render( 'luck2', {number:num, luck:luck} );
+});
+app.get("/luck3", (req, res) => {
+  const num = Math.floor( Math.random() * 2 + 1 );
+  let luck = '';
+  if(num == 1)luck = "表"
+  else if(num == 2)luck = "裏"
+
+  res.render( 'luck3', {number:num, luck:luck} );
+});
 app.get("/janken", (req, res) => {
   let hand = req.query.hand;
   let win = Number(req.query.win) || 0;
