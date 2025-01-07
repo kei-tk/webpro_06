@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>問題</title>
+</head>
+<body>
+    <p>問題：<%= question %></p>
+    <p>あなたの答えは<%= answer || "未回答" %></p>
+    <p>結果：<%= result || "未判定" %></p>
+    <hr>
+    <form action="/question">
+        <input type="text" name="answer" required>
+        <label for="answer">答えは？</label>
+        <input type="submit" value="送信">
+    </form>   
+</body>
+</html>

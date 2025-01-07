@@ -30,18 +30,48 @@ app.get("/luck", (req, res) => {
 
   res.render( 'luck', {number:num, luck:luck} );
 });
-app.get("/dice", (req, res) => {
-  const num = Math.floor( Math.random() * 100 + 1 );
-  let luck = num;
-  res.render( 'dice', {number:num, luck:luck} );
-});
-app.get("/coin", (req, res) => {
-  const num = Math.floor( Math.random() * 2 + 1 );
-  let luck = '';
-  if(num == 1)luck = "表"
-  else if(num == 2)luck = "裏"
+app.get("/question", (req, res) => {
+  let question = "1+1=?";
+  let correct = "2";
+  let answer = req.query.answer || ""; 
+  let result = "";
 
-  res.render( 'coin', {number:num, luck:luck} );
+  if (answer === correct) {
+    result = "正解！";
+  } 
+  else if (answer) { 
+    result = `不正解！正解は ${correct} でした！`;
+  }
+
+  const display = {
+    question: question,
+    result: result,
+    answer: answer,
+  };
+
+  res.render("question", display);
+});
+app.get("/game", (req, res) => {
+  let userChoice = req.query.choice; 
+  let winningNumber = req.query.winningNumber; 
+
+  if (!winningNumber) {
+      winningNumber = Math.floor(Math.random() * 5) + 1; 
+  }
+  let result = ""; 
+  if (userChoice) {
+      if (parseInt(userChoice) === parseInt(winningNumber)) {
+          result = "あたり！おめでとう！";
+      } else {
+          result = "ハズレ！また挑戦してね。";
+      }
+  }
+  const display = {
+      userChoice: userChoice || null,
+      winningNumber: winningNumber,
+      result: result || null
+  };
+  res.render("game", display);
 });
 app.get("/janken", (req, res) => {
   let hand = req.query.hand;
