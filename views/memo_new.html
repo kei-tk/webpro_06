@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>新規メモ作成</title>
+</head>
+<body>
+<h2>新規メモ作成</h2>
+<form action="/memo" method="POST">
+    <label for="title">タイトル:</label><br>
+    <input type="text" name="title" required><br>
+    
+    <label for="content">内容:</label><br>
+    <textarea name="content" rows="5" cols="30"></textarea><br>
+    <br>
+    <input type="submit" value="保存">
+</form>
+<a href="/memo">一覧に戻る</a>
+</body>
+</html>

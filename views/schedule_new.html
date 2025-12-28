@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>予定の新規登録</title>
+</head>
+<body>
+<h2>新しい予定の登録</h2>
+<form action="/schedule" method="POST">
+    <label for="date">日付:</label><br>
+    <input type="date" name="date" required><br>
+    
+    <label for="title">予定:</label><br>
+    <input type="text" name="title" required><br>
+    
+    <label for="memo">メモ:</label><br>
+    <input type="text" name="memo"><br>
+    <br>
+    <input type="submit" value="登録">
+</form>
+<a href="/schedule">一覧に戻る</a>
+</body>
+</html>

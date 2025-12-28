@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>予定の編集</title>
+</head>
+<body>
+<h2>予定の編集: <%= data.title %></h2>
+<form action="/schedule/update/<%= id %>" method="POST">
+    <label>日付:</label><br>
+    <input type="date" name="date" value="<%= data.date %>"><br>
+    
+    <label>予定:</label><br>
+    <input type="text" name="title" value="<%= data.title %>"><br>
+    
+    <label>メモ:</label><br>
+    <input type="text" name="memo" value="<%= data.memo %>"><br>
+    <br>
+    <input type="submit" value="更新">
+</form>
+<a href="/schedule">一覧に戻る</a>
+</body>
+</html>

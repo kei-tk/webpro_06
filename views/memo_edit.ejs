@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>メモ編集</title>
+</head>
+<body>
+<h2>メモの編集: <%= data.title %></h2>
+<form action="/memo/update/<%= id %>" method="POST">
+    <label>タイトル:</label><br>
+    <input type="text" name="title" value="<%= data.title %>"><br>
+    
+    <label>内容:</label><br>
+    <textarea name="content" rows="5" cols="30"><%= data.content %></textarea><br>
+    <br>
+    <input type="submit" value="更新">
+</form>
+<a href="/memo">一覧に戻る</a>
+</body>
+</html>

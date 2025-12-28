@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>メモ一覧</title>
+</head>
+<body>
+<h2>メモ一覧</h2>
+<table border="1">
+<tr><th>ID</th><th>タイトル</th><th>操作</th></tr>
+<% let number = 0 %>
+<% for(let row of data) { %>
+<tr>
+    <td><%= row.id %></td>
+    <td><a href="/memo/<%= number %>"><%= row.title %></a></td>
+    <td>
+        <a href="/memo/edit/<%= number %>">編集</a>
+        <a href="/memo/delete/<%= number %>">削除</a>
+    </td>
+</tr>
+<% number += 1 %>
+<% } %>
+</table>
+<br>
+<a href="/memo/create">新規メモ作成</a>
+</body>
+</html>

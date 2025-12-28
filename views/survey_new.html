@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>アンケート新規登録</title>
+</head>
+<body>
+<h2>アンケート回答登録</h2>
+<form action="/survey" method="POST">
+    <label for="name">名前:</label><br>
+    <input type="text" name="name" required><br>
+    
+    <label for="age">年齢:</label><br>
+    <input type="number" name="age"><br>
+    
+    <label for="hobby">趣味:</label><br>
+    <input type="text" name="hobby"><br>
+    <br>
+    <input type="submit" value="登録">
+</form>
+<a href="/survey">一覧に戻る</a>
+</body>
+</html>

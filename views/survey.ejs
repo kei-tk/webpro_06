@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>アンケート一覧</title>
+</head>
+<body>
+<h2>アンケート回答一覧</h2>
+<table border="1">
+<tr><th>ID</th><th>名前</th><th>操作</th></tr>
+<% let number = 0 %>
+<% for(let row of data) { %>
+<tr>
+    <td><%= row.id %></td>
+    <td><a href="/survey/<%= number %>"><%= row.name %></a></td>
+    <td>
+        <a href="/survey/edit/<%= number %>">編集</a>
+        <a href="/survey/delete/<%= number %>">削除</a>
+    </td>
+</tr>
+<% number += 1 %>
+<% } %>
+</table>
+<br>
+<a href="/survey/create">新規回答登録</a>
+</body>
+</html>

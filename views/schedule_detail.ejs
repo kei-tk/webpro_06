@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>予定の詳細</title>
+</head>
+<body>
+<h2><%= data.title %> の詳細</h2>
+<table border="1">
+<tr><th>項目</th><th>データ</th></tr>
+<tr><td>ID</td><td><%= data.id %></td></tr>
+<tr><td>日付</td><td><%= data.date %></td></tr>
+<tr><td>予定</td><td><%= data.title %></td></tr>
+<tr><td>メモ</td><td><%= data.memo %></td></tr>
+</table>
+<br>
+<a href="/schedule/edit/<%= id %>">この予定を編集する</a><br>
+<br>
+<a href="/schedule">一覧に戻る</a>
+</body>
+</html>

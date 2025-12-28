@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>編集: <%= data.name %></title>
+</head>
+<body>
+<h2><%= data.name %>さんのデータ編集</h2>
+<form action="/survey/update/<%= id %>" method="POST">
+    <label>名前:</label><br>
+    <input type="text" name="name" value="<%= data.name %>"><br>
+    
+    <label>年齢:</label><br>
+    <input type="number" name="age" value="<%= data.age %>"><br>
+    
+    <label>趣味:</label><br>
+    <input type="text" name="hobby" value="<%= data.hobby %>"><br>
+    <br>
+    <input type="submit" value="更新">
+</form>
+<a href="/survey">一覧に戻る</a>
+</body>
+</html>

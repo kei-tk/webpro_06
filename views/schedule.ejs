@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>スケジュール一覧</title>
+</head>
+<body>
+<h2>スケジュール一覧</h2>
+<table border="1">
+<tr><th>ID</th><th>日付</th><th>予定</th><th>操作</th></tr>
+<% let number = 0 %>
+<% for(let row of data) { %>
+<tr>
+    <td><%= row.id %></td>
+    <td><%= row.date %></td>
+    <td><a href="/schedule/<%= number %>"><%= row.title %></a></td>
+    <td>
+        <a href="/schedule/edit/<%= number %>">編集</a>
+        <a href="/schedule/delete/<%= number %>">削除</a>
+    </td>
+</tr>
+<% number += 1 %>
+<% } %>
+</table>
+<br>
+<a href="/schedule/create">新規予定登録</a>
+</body>
+</html>
